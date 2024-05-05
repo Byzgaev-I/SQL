@@ -114,7 +114,9 @@ test_db=# SELECT * FROM information_schema.table_privileges WHERE table_catalog 
 
 ### Задание 3
 
+Используя SQL-синтаксис, наполните таблицы следующими тестовыми данными:  
 
+Таблица orders 
 | Наименование | Цена |
 |--------------|------|
 | Шоколад      | 10|  
@@ -123,6 +125,15 @@ test_db=# SELECT * FROM information_schema.table_privileges WHERE table_catalog 
 | Монитор      | 7000| 
 | Гитара       | 4000|
 
+Таблица clients
+
+|ФИО| Страна проживания |
+|--------------|------|
+| Иванов Иван Иванович| 10|  
+| Петров Петр Петрович | 3000 |   
+| Иоганн Себастьян Бах      | 500|      
+| Ронни Джеймс Дио     | 7000| 
+| Ritchie Blackmore      | 4000|
  
 
 
