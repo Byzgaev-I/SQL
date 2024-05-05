@@ -9,10 +9,10 @@
 
 ### Решение:
 
-Чтобы поднять инстанс PostgreSQL с использованием Docker и двумя томами (один для данных БД, другой для бэкапов), вы можете использовать следующую команду docker run:
+Чтобы поднять инстанс PostgreSQL с использованием Docker и двумя томами (один для данных БД, другой для бэкапов), использую следующую команду docker run:
 
 ```bash
-docker run --name postgres-instance -e POSTGRES_PASSWORD=mysecretpassword -d \
+docker run --name postgres12 -e POSTGRES_PASSWORD=Sasha123 -d \
   -v /my/local/path/to/postgres/data:/var/lib/postgresql/data \
   -v /my/local/path/to/postgres/backups:/backups \
   postgres:12
@@ -217,19 +217,19 @@ test_db=# INSERT INTO clients (id, second_name, сountry_residence) VALUES (1, '
 
 ```bash
 # Подключаюсь к контейнеру
-docker exec -it postgres_test bash
+docker exec -it postgres12 bash
 
 # Создаю бекап на нужном volume
 pg_dump -U postgres -W test_db > /var/lib/postgresql/backup/test_db.sql
 
 # Останваливаю старый контейнер
-docker stop postgres_test
+docker stop postgres12
 
 # Поднимаю новый контейнер и монтирую volume с бекапом
-docker run --network host --name postgres_test2 -e POSTGRES_PASSWORD=postgres -ti -d -v vol2:/var/lib/postgresql/backup postgres:12
+docker run --network host --name postgres_2 -e POSTGRES_PASSWORD=postgres -ti -d -v vol2:/var/lib/postgresql/backup postgres:12
 
 # Подключаюсь к новому контейнеру
-docker exec -it postgres_test2 bash
+docker exec -it postgres_2 bash
 
 # Востанавливаю из бекапа необходимой базы
 psql -U postgres -W test_db < /var/lib/postgresql/backup/test_db.sql
