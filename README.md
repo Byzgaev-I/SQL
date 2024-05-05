@@ -155,9 +155,12 @@ test_db=# INSERT INTO orders (id, title, price) VALUES (1, 'chocolate', 10), (2,
 Наполнил таблицу clients  
 test_db=# INSERT INTO clients (id, second_name, сountry_residence) VALUES (1, 'Иванов Иван Иванович', 'USA'), (2, 'Петров Петр Петрович', 'Canada'), (3, 'Иоганн Себастьян Бах', 'Japan'), (4, 'Ронни Джеймс Дио', 'Russia'), (5, 'Ritchie Blackmore', 'Russia');  
 ```
+![image](https://github.com/Byzgaev-I/SQL/blob/main/3.png)
+
+На скрине видим вычисление количества записей для каждой таблицы
+Запросы и результаты их выполнения.
+
 ![image](https://github.com/Byzgaev-I/SQL/blob/main/3-1.png)
-
-
 
 
 
