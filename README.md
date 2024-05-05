@@ -47,3 +47,59 @@ volumes:
   pg_data:
   pg_backups:
 ```
+
+---
+
+### Задание 2
+
+В БД из задачи 1:
+- создайте пользователя test-admin-user и БД test_db;  
+- в БД test_db создайте таблицу orders и clients (спeцификация таблиц ниже);  
+- предоставьте привилегии на все операции пользователю test-admin-user на таблицы БД test_db;  
+- создайте пользователя test-simple-user;  
+- предоставьте пользователю test-simple-user права на SELECT/INSERT/UPDATE/DELETE этих таблиц БД test_db.
+  
+Таблица orders:
+
+- id (serial primary key);  
+- наименование (string);  
+- цена (integer).
+  
+Таблица clients:
+
+- id (serial primary key);  
+- фамилия (string);  
+- страна проживания (string, index);  
+- заказ (foreign key orders).
+- 
+Приведите:
+
+- итоговый список БД после выполнения пунктов выше;  
+- описание таблиц (describe);  
+- SQL-запрос для выдачи списка пользователей с правами над таблицами test_db;  
+- список пользователей с правами над таблицами test_db.
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
