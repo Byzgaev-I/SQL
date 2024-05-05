@@ -11,8 +11,7 @@
 
 Чтобы поднять инстанс PostgreSQL с использованием Docker и двумя томами (один для данных БД, другой для бэкапов), вы можете использовать следующую команду docker run:
 
-bash
-```
+```bash
 docker run --name postgres-instance -e POSTGRES_PASSWORD=mysecretpassword -d \
   -v /my/local/path/to/postgres/data:/var/lib/postgresql/data \
   -v /my/local/path/to/postgres/backups:/backups \
