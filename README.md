@@ -197,14 +197,45 @@ test_db=# INSERT INTO clients (id, second_name, сountry_residence) VALUES (1, '
 
 - Чтение таблицы orders    
 - Создание хеша для поля id  
-- Сканирование таблицы clients  
+- Сканирование таблицы clients
+- Rows - приблизительно возвращаемое количество строк
 - Для каждой строки по полю booking будет проверено, соответствует ли она чему-то в кеше orders  
-- При налии соответствий формируется вывод  
+- При наличии соответствий далее формируется вывод  
 - Так же указано примерное количество строк, вес и стоимость.  
 
+---
 
+### Задание 6
 
+Создайте бэкап БД test_db и поместите его в volume, предназначенный для бэкапов (см. задачу 1).  
+Остановите контейнер с PostgreSQL, но не удаляйте volumes.  
+Поднимите новый пустой контейнер с PostgreSQL.  
+Восстановите БД test_db в новом контейнере.  
+Приведите список операций, который вы применяли для бэкапа данных и восстановления.  
 
+### Решение:
+
+```bash
+# Подключаюсь к контейнеру
+docker exec -it postgres_test bash
+
+# Создаю бекап на нужном volume
+pg_dump -U postgres -W test_db > /var/lib/postgresql/backup/test_db.sql
+
+# Останваливаю старый контейнер
+docker stop postgres_test
+
+# Поднимаю новый контейнер и монтирую volume с бекапом
+docker run --network host --name postgres_test2 -e POSTGRES_PASSWORD=postgres -ti -d -v vol2:/var/lib/postgresql/backup postgres:12
+
+# Подключаюсь к новому контейнеру
+docker exec -it postgres_test2 bash
+
+# Востанавливаю из бекапа необходимой базы
+psql -U postgres -W test_db < /var/lib/postgresql/backup/test_db.sql
+
+```
+Проверил наличие базы и таблиц
 
 
 
