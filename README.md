@@ -82,10 +82,37 @@ volumes:
 
  ### Решение:
 
+ - Создал пользователя test-admin-user с паролем.    
+ - Создал пользователя test-simple-user с паролем.    
+ - Создал базу данных test_db.    
+ - Создал таблицу orders.    
+ - Создал таблицу clients.    
+ - Создал индекс для сountry_residence.    
+ - Разрешил подключение пользователя test-admin-user к базе данных test_db.    
+ - Выдал права на все таблица в схеме public для test-admin-user.    
+ - Разрешил подключение пользователя test-simple-user к базе данных test_db.    
+ - Выдал необходимые права на все таблица в схеме public для test-simple-user".    
+
+- список БД после выполнения написанного:
+
+![image](https://github.com/Byzgaev-I/SQL/blob/main/2-1.png)  
+
+- описание таблиц (describe):
+
+ ![image](https://github.com/Byzgaev-I/SQL/blob/main/2-2.png)
+
+ - SQL-запрос для выдачи списка пользователей с правами над таблицами test_db:
+```bash
+test_db=# SELECT * FROM information_schema.table_privileges WHERE table_catalog = 'test_db' AND grantee LIKE 'test%';
+``` 
+
+ - список пользователей с правами над таблицами test_db:
+
+![image](https://github.com/Byzgaev-I/SQL/blob/main/2-3.png)
+
+
+
  
-
-
-
 
 
 
