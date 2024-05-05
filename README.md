@@ -235,7 +235,7 @@ docker exec -it postgres_test2 bash
 psql -U postgres -W test_db < /var/lib/postgresql/backup/test_db.sql
 
 ```
-Проверил наличие базы и таблиц
+
 
 
 
