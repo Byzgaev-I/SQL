@@ -47,6 +47,7 @@ volumes:
   pg_data:
   pg_backups:
 ```
+![image](https://github.com/Byzgaev-I/SQL/blob/main/1-3.png)
 
 ---
 
