@@ -110,8 +110,19 @@ test_db=# SELECT * FROM information_schema.table_privileges WHERE table_catalog 
 
 ![image](https://github.com/Byzgaev-I/SQL/blob/main/2-3.png)
 
+---
+
+### Задание 3
 
 
+| Наименование | Цена |
+|--------------|-------|
+| Шоколад     | 10|  
+|--------------|-------|
+| Контент 4   | Контент 5   |  
+| Контент 4   | Контент 5   |  
+| Контент 4   | Контент 5   |  
+| Контент 4   | Контент 5   |
  
 
 
