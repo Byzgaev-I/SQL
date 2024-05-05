@@ -226,10 +226,10 @@ pg_dump -U postgres -W test_db > /var/lib/postgresql/backup/test_db.sql
 docker stop postgres12
 
 # Поднимаю новый контейнер и монтирую volume с бекапом
-docker run --network host --name postgres_2 -e POSTGRES_PASSWORD=postgres -ti -d -v vol2:/var/lib/postgresql/backup postgres:12
+docker run --network host --name postgres12_test -e POSTGRES_PASSWORD=Sasha123 -ti -d -v vol2:/var/lib/postgresql/backup postgres:12
 
 # Подключаюсь к новому контейнеру
-docker exec -it postgres_2 bash
+docker exec -it postgres12_test bash
 
 # Востанавливаю из бекапа необходимой базы
 psql -U postgres -W test_db < /var/lib/postgresql/backup/test_db.sql
