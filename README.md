@@ -146,7 +146,16 @@ test_db=# SELECT * FROM information_schema.table_privileges WHERE table_catalog 
 - результаты их выполнения.
 ``` 
 
+ ### Решение:
 
+```bash
+Наполнил таблицу orders  
+test_db=# INSERT INTO orders (id, title, price) VALUES (1, 'chocolate', 10), (2, 'printer', 3000), (3, 'book', 500), (4, 'monitor', 7000), (5, 'guitar', 4000);
+
+Наполнил таблицу clients  
+test_db=# INSERT INTO clients (id, second_name, сountry_residence) VALUES (1, 'Иванов Иван Иванович', 'USA'), (2, 'Петров Петр Петрович', 'Canada'), (3, 'Иоганн Себастьян Бах', 'Japan'), (4, 'Ронни Джеймс Дио', 'Russia'), (5, 'Ritchie Blackmore', 'Russia');  
+```
+![image](https://github.com/Byzgaev-I/SQL/blob/main/3-1.png)
 
 
 
