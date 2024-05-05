@@ -178,6 +178,8 @@ test_db=# INSERT INTO clients (id, second_name, сountry_residence) VALUES (1, '
 Приведите SQL-запросы для выполнения этих операций.
 Приведите SQL-запрос для выдачи всех пользователей, которые совершили заказ, а также вывод этого запроса.
 
+![image](https://github.com/Byzgaev-I/SQL/blob/main/4.png)
+
 
 
 
